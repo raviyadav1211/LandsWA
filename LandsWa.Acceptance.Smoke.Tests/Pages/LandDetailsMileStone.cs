@@ -46,10 +46,8 @@ namespace LandsWa.Acceptance.Smoke.Tests.Pages
         {
             var ele = GetElementByXpath(localGovtAuthority);
             ele.SendKeys(LGAName);
-            Thread.Sleep(1000);
-            ele.SendKeys(Keys.ArrowDown);
-            Thread.Sleep(1000);
-            ele.SendKeys(Keys.Enter);
+            Thread.Sleep(2000);
+            _driver.FindElement(By.XPath("//*[text()='City of Joondalup']")).Click();
             this.LGAName = GetElementByXpath(selectedLGA).Text;
             return this;
         }
