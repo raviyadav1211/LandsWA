@@ -7,6 +7,7 @@ namespace LandsWa.Acceptance.Smoke.Tests.Pages
     {
         protected override By IsPageLoadedBy => By.XPath("//title[contains(text(),'My Dashboard - iWMS DoL Officer Site')]");
         private IWebDriver _driver;
+        protected string teamDashboardButton = "//div[text()='Team Dashboard']";
 
         public MyDashboardPage(IWebDriver driver) : base(driver)
         {
@@ -18,13 +19,20 @@ namespace LandsWa.Acceptance.Smoke.Tests.Pages
             return IsPageLoaded();
         }
 
+        public TeamDashboardPage ClickOnTeamDashboardButton()
+        {
+            GetElementByXpath(teamDashboardButton).Click();
+            return new TeamDashboardPage(_driver);
+        }
+
+
         public bool IsOfficerNameDisplayed(string name)
         {
             var NameElement = GetElementByXpath($"//strong[contains(text(),'{name}')]");
             return NameElement.Displayed;
         }
 
-        internal AssignApplicantCustomerPage ClickCreateNewCaseButon()
+        internal ApplicantCustomerSearchPage ClickCreateNewCaseButon()
         {
             IWebElement ele = null;
             try
@@ -37,7 +45,7 @@ namespace LandsWa.Acceptance.Smoke.Tests.Pages
                 Console.WriteLine(e.InnerException);
             }
             ele.Click();
-            return new AssignApplicantCustomerPage(_driver);
+            return new ApplicantCustomerSearchPage(_driver);
         }
     }
 }

@@ -12,8 +12,8 @@ namespace LandsWa.Acceptance.Smoke.Tests.Pages
         IWebDriver _driver = null;
 
         protected override By IsPageLoadedBy => By.XPath("//title[contains(text(),'Team Dashboard - iWMS DoL Officer Site')]");
-        //protected IWebElement ManagerName => GetElementByXpath("//span[contains(text(),'Sophia')]");
-        
+        protected string myDashboardButton = "//div[text()='My Dashboard']";
+
         public TeamDashboardPage(IWebDriver driver) : base(driver)
         {
             _driver = driver;
@@ -22,6 +22,12 @@ namespace LandsWa.Acceptance.Smoke.Tests.Pages
         public bool IsPageLoadComplete()
         {
             return IsPageLoaded();
+        }
+
+        public MyDashboardPage ClickOnMyDashboardButton()
+        {
+            GetElementByXpath(myDashboardButton).Click();
+            return new MyDashboardPage(_driver);
         }
 
         public bool IsManagerNameDisplayed(string name)

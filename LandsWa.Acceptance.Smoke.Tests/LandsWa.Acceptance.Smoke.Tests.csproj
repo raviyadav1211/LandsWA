@@ -95,7 +95,7 @@
     </Compile>
     <Compile Include="Pages\AdditionalInformationMileStone.cs" />
     <Compile Include="Pages\ApplicantDetailsMileStone.cs" />
-    <Compile Include="Pages\AssignApplicantCustomerPage.cs" />
+    <Compile Include="Pages\ApplicantCustomerSearchPage.cs" />
     <Compile Include="Pages\ConsultationMileStone.cs" />
     <Compile Include="Pages\LandDetailsMileStone.cs" />
     <Compile Include="Pages\MyDashboardPage.cs" />
