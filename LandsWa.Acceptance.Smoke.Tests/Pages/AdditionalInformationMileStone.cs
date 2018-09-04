@@ -19,7 +19,7 @@ namespace LandsWa.Acceptance.Smoke.Tests.Pages
             _driver = driver;
             GetElementByXpath(staticPageElement).Click();
         }
-
+//comment from raviyadav1211
         public ReviewMileStone ClickContinueButton()
         {
             GetElementByXpath(continueButton).Click();
